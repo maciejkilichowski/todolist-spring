@@ -18,10 +18,14 @@ public class TodoController {
     @GetMapping
     public List<TodoEntity> findAll(){
 
-        return todoRepository.findAll()
+        return todoRepository.findAll();
     }
     @PostMapping
     public TodoEntity save(@Valid @NotNull @RequestBody TodoEntity todoEntity){
+        return todoRepository.save(todoEntity);
+    }
+    @PutMapping
+    public TodoEntity update(@Valid @NotNull @RequestBody TodoEntity todoEntity){
         return todoRepository.save(todoEntity);
     }
 }
