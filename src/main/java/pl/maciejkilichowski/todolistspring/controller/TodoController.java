@@ -28,4 +28,8 @@ public class TodoController {
     public TodoEntity update(@Valid @NotNull @RequestBody TodoEntity todoEntity){
         return todoRepository.save(todoEntity);
     }
+    @DeleteMapping(value = "/{id}")
+    public void delete(@PathVariable Long id){
+        todoRepository.deleteById(id);
+    }
 }
